@@ -14,28 +14,31 @@ from rich.columns import Columns
 import time
 
 
+
+
 class Listener:
     def __init__(self) -> None:
+
         self.lock = threading.Lock()
         self.clients = {}  # keys = connection || values = user_name
         self.log_file = "log_file.txt"
         self.encode = "utf-8"
         self.users_color = {}  # keys = username || values == colors
         self.colors = [
-        "red", "green", "yellow",
-        "blue", "magenta", "cyan", "white",  "bright_red", "bright_green", "bright_yellow", "bright_blue", "bright_magenta",
-        "bright_cyan","orange1", "orange3", "dark_orange", "orange_red1", "gold1", "gold3", "gold4",
-        "deep_pink1", "deep_pink2", "deep_pink3", "hot_pink", "hot_pink2", "hot_pink3",
-        "violet", "violet_red", "medium_purple", "medium_purple2", "blue_violet",
-        "dodger_blue1", "dodger_blue2", "dodger_blue3", "sky_blue1", "sky_blue2", "sky_blue3",
-        "spring_green1", "spring_green2", "spring_green3", "sea_green1", "sea_green2", "sea_green3",
-        "turquoise2", "turquoise4", "dark_turquoise", "medium_turquoise",
-        "chartreuse1", "chartreuse2", "chartreuse3", "chartreuse4",
-        "aquamarine1", "aquamarine2", "aquamarine3","pale_green1", "pale_green3",
-        "khaki1", "khaki3", "khaki4", "light_goldenrod1", "light_goldenrod3",
-        "salmon1","indian_red", "orchid", "plum1", "plum3",
-        "slate_blue1", "slate_blue3", "steel_blue1", "steel_blue3"
-                       ]
+            "red", "green", "yellow",
+            "blue", "magenta", "cyan", "white",  "bright_red", "bright_green", "bright_yellow", "bright_blue", "bright_magenta",
+            "bright_cyan","orange1", "orange3", "dark_orange", "orange_red1", "gold1", "gold3", "gold4",
+            "deep_pink1", "deep_pink2", "deep_pink3", "hot_pink", "hot_pink2", "hot_pink3",
+            "violet", "violet_red", "medium_purple", "medium_purple2", "blue_violet",
+            "dodger_blue1", "dodger_blue2", "dodger_blue3", "sky_blue1", "sky_blue2", "sky_blue3",
+            "spring_green1", "spring_green2", "spring_green3", "sea_green1", "sea_green2", "sea_green3",
+            "turquoise2", "turquoise4", "dark_turquoise", "medium_turquoise",
+            "chartreuse1", "chartreuse2", "chartreuse3", "chartreuse4",
+            "aquamarine1", "aquamarine2", "aquamarine3","pale_green1", "pale_green3",
+            "khaki1", "khaki3", "khaki4", "light_goldenrod1", "light_goldenrod3",
+            "salmon1","indian_red", "orchid", "plum1", "plum3",
+            "slate_blue1", "slate_blue3", "steel_blue1", "steel_blue3"
+                        ]
         self.prompt = ""
         self.console = Console()
         self.selected_user_session = {}
